@@ -3,7 +3,7 @@ Introduction –
 
 It is an desktop based Application. Made by using Swing , AWT and MYSQL Database.
 
-**Login Page**
+**Login Page -**
 
 The first frame of our project is Login Frame. In this Frame If the user is a registered then he has to enter his card number and Pin and press SIGN IN button. If the user is not registered then they have to press SIGN UP button. 
 In this Frame we have an icon , some Text/Labels , some Input Field and some Buttons.
@@ -68,30 +68,61 @@ Syntax-
 **NOTE**
 We use similar Syntax for each frame and to add components on each frame.
 
-**SignUp Pages (SignUpOne , SignUpTwo, SignUp Three)** 
+**SignUp Pages (SignUpOne , SignUpTwo, SignUp Three) -** 
 When we click on SIGN UP Button a series of new frame will come in which we have to enter the details of user and facilites they want from the bank.
 When the user finishes entering the required informations then the System will generate a Card number and Pin for the user.
 After Getting the Card Number and PIN a new Deposit frame will come in which user have to diposit some amount.
 
-**TRANSACTIONS FRAME**
+**TRANSACTIONS FRAME - **
 When user succesfully Sign In by enters correct CARD Number and PIN then TRANSACTIONS Frame will come.
 In Transactions Frame there are several buttons like Deposit, Cash Withdrawl, Fast Cash, Mini Statement, Pin Change, Balence Enquiry and Exit.
 On clicking any button the user will go to a new Frame which Perform a specific task.
 
-**DEPOSIT FRAME**
+**DEPOSIT FRAME - **
 When user click on Deposit button then a new frame will come in which user have to enter the amount they want to deposit in their bank acount.
 
-**WITHDRAWL FRAME**
+**WITHDRAWL FRAME - **
 When user click on Withdraw button then a new frame will come in which user have to enter the amount they want to Withdraw from their bank acount.
 
-**FAST CASH FRAME**
+**FAST CASH FRAME - **
 When user click on Fast Cash button then a new frame will come. This new Frame consist Several Button and each button has a Amount written on it. The user have to press the button having the amount which they want withdraw.
 
-**MINI STATEMENT FRAME**
+**MINI STATEMENT FRAME - **
 When user click on Mini Statement button then a new frame will come Which show the recent transactions done by the user.
 
-**PIN CHANGE FRAME**
+**PIN CHANGE FRAME - **
 When user click on PIN CHANGE button then a new frame will come having Two input field. User Have to enter the new pin They want to set for thier account.
+
+**Database Connectivity - **
+
+For database Connectivity We use JDBC and crated a Conn class.
+JDBC stans for Java DataBase Connectivity. It is an API which defines how we can access a database. It provide method to Query and Update data in our Database.  
+
+Code is as follows- 
+
+import java.sql.*;
+public class Conn {
+    Connection c; //declaring connection variable
+    Statement s; //declaring statement variable
+    public Conn(){
+        try {
+            //creating Connection
+            c = DriverManager.getConnection("jdbc:mysql:///bankmanagementsystem", "root", "abhayraj");
+            //creating Statement
+            s = c.createStatement();
+        } catch (Exception e){
+            //print Error
+            System.out.println(e);
+        }
+    }
+}
+
+To execute a query we have to create a object of this Conn class in another class and using execteUpdate command.
+
+Syntax-
+        Conn conn = new Conn();
+        String query = "Insert into bank values('"+pinnumber+"', '"+date+"', 'Deposit', '"+number+"')";
+        conn.s.executeUpdate(query);
 
 Reference –
 I made this Project with the help of a Youtube Channel Named Code For InterView.
