@@ -1,5 +1,6 @@
 # ATM-Simulator-System
 Introduction –
+
 It is an desktop based Application. Made by using Swing , AWT and MYSQL Database.
 
 **Login Page**
@@ -8,6 +9,7 @@ The first frame of our project is Login Frame. In this Frame If the user is a re
 In this Frame we have an icon , some Text/Labels , some Input Field and some Buttons.
 
 For Creating a Frame we use JFrame class of Swing Package is a part of Java Extenssion.
+
 Syntax-
         public class Login extends JFrame{
             Login(){
@@ -28,6 +30,7 @@ Syntax-
 
 
 For adding a Image we use ImageIcon Class of java Swing.
+
 Syntax-
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/logo.jpg"));
         Image i2 = i1.getImage().getScaledInstance(100, 100,Image.SCALE_DEFAULT);
@@ -37,6 +40,7 @@ Syntax-
         add(label);
 
 To create Labels we use  JLabel Class of java Swing.
+
 Syntax-
         JLabel text = new JLabel("Welcome to ATM");
         text.setFont(new Font("Osward", Font.BOLD, 38));
@@ -44,6 +48,7 @@ Syntax-
         add(text);
 
 To create an Input Field we use JTextField and JPasswordField.
+
 Syntax-
         JTextField cardTextField = new JTextField();
         cardTextField.setBounds(300, 150, 230, 30);
@@ -51,6 +56,7 @@ Syntax-
         add(cardTextField);
 
 To create Buttons we use JButton class of Java Swing.
+
 Syntax-
         JButton signup = new JButton("SIGN UP");
         signup.setBounds(300, 350, 230, 30);
